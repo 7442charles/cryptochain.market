@@ -1,0 +1,57 @@
+body{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #efefef;
+    font-family:'Courier New', Courier, monospace;
+    height: auto;
+    width: 100%;
+    padding: 10px;
+}
+.company_logo{
+    height: 200px;
+}
+.forgot, .signup{
+    color:red;
+    text-decoration: underline;
+}
+.login_details_username, .login_details_password{
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-color: purple;
+    border-width: small;
+    text-align: center;
+}
+.forgot{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: small;
+}
+.new{
+    color:teal;
+}
+.redirect_signup{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.login_head, .user_intention{
+    font-weight: bold;
+    font-size: large;
+}
+.seller_btn, .buyer_btn{
+    font-weight: bold;
+    border-radius: 10px;
+    border-color: #efefef;
+    
+}
+.buyer_btn{
+    background-color: rgb(66, 146, 146);
+}
+.seller_btn{
+    background-color: rgb(150, 73, 150);
+}
