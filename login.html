@@ -13,29 +13,38 @@
         <div>
             <img src="imgs/company_logo-trans.png" class="company_logo">
         </div>
+        <!--
         <div class="user_intention">
            <b> Are you a?</b>
         </div>
+      
         <div class="user_intention_answer">
             <button class="seller_btn">SELLER</button>
              
             <button class="buyer_btn">BUYER</button>
         </div>
-        &nbsp;
-        <form action="" class="login_form">
-            <div class="login_head">LOGIN</div>
+        &nbsp;-->
+        <form action="" class="login_form" method="post">
+            <div class="login_head"><h3>LOGIN</h3></div>
+            &nbsp;
             <div class="form_inputs">
                 <div>
-                    <input type="text" id="email_username"  class="login_details_username" placeholder="email / username">
+                    <input type="text" id="email_username"  class="login_details_username" placeholder="email / username" value="">
                 </div>
                 &nbsp; &nbsp;
                 <div>
-                    <input type="password" id="password" class="login_details_password" placeholder="Password">
+                    <input type="password" id="password" class="login_details_password" placeholder="Password" value="">
                 </div>
+                
+                
             </div>
-            &nbsp;
-            <div class="forgot">Forgot password?</div>
         </form>
+        &nbsp;
+        <div class="login_btn">
+            <button class="btn_login" value="submit">login</button>
+        </div>
+        <div class="forgot">Forgot password?</div>
+        
         <div class="or">
             <hr>
         </div>
@@ -48,5 +57,14 @@
     </div>
 
     <script src="js/main.js"></script>
+    <script src="Darkmode.js\lib\darkmode-js.js"></script>
+    <script>
+        new Darkmode({
+          bottom: '32px',
+          right: '32px',
+          time: '0.5s',
+          label: '🌓'
+        }).showWidget();
+      </script>
 </body>
 </html>

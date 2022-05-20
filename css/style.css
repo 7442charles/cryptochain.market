@@ -39,7 +39,9 @@ body{
     justify-content: flex-start;
 }
 
-.login_head, .user_intention{
+.login_head{
+    display: flex;
+    justify-content: center;
     font-weight: bold;
     font-size: large;
 }
@@ -54,4 +56,18 @@ body{
 }
 .seller_btn{
     background-color: rgb(150, 73, 150);
+}
+.login_btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /*background-color: #efefef;*/
+}
+.btn_login{
+    border-radius: 10px;
+    border-color: purple;
+    border-left: 2px;
+    border-left-color: teal;
+    border-right: 2px;
+    border-right-color: teal;
 }
