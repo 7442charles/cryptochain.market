@@ -8,28 +8,27 @@ body{
     font-family:'Courier New', Courier, monospace;
     height: auto;
     width: 100%;
-    padding: 10px;
-    font-size: large;
+    padding-left: 10px;
 }
 .company_logo{
     height: 200px;
+    justify-content: center;
 }
-.forgot, .signup{
+.forgot, .signup, .login{
     color:red;
     text-decoration: underline;
 }
-.login_details_username, .login_details_password{
+.login_details_username, .login_details_password, input{
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-color: purple;
     border-width: small;
     text-align: center;
 }
-.forgot{
+.forgot, .Tologin{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    font-size: small;
 }
 .new{
     color:teal;
@@ -46,29 +45,32 @@ body{
     font-weight: bold;
     font-size: large;
 }
-.seller_btn, .buyer_btn{
+.sell_btn, .buy_btn{
     font-weight: bold;
     border-radius: 10px;
     border-color: #efefef;
+    width: 40%;
     
 }
-.buyer_btn{
+.buy_btn{
     background-color: rgb(66, 146, 146);
 }
-.seller_btn{
+.sell_btn{
     background-color: rgb(150, 73, 150);
 }
-.login_btn{
+.login_btn, .signup_btn{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     /*background-color: #efefef;*/
 }
-.btn_login{
+.btn_login, .btn_signup{
     border-radius: 10px;
     border-color: purple;
     border-left: 2px;
     border-left-color: teal;
     border-right: 2px;
     border-right-color: teal;
+    width: 40%;
 }
+
