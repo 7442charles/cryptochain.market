@@ -37,9 +37,23 @@ function emailcheck() {
     console.log('phone_number', phone_number, 'full name0', full_name);
     //console.log('json stringified',JSON.stringify(final_details));
 }
+//var data = "{\n    \"name\" : \"Ahmed Shokry\",\n    \"phone\" : \"+201090315851\",\n    \"email\" : \"ahmad.shokry.eg@gmail.com\",\n    \"password\" : \"xcryptox\"\n}";
 
-response.open("POST", url)
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function() {
+  if(this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("POST", "%7B%7Burl%7D%7D/api/v1/auth/register");
+
+xhr.send(final_details);
+
+/*response.open("POST", url)
 response.setRequestHeader('Content-Type', 'application/json');
 let final_details_json = JSON.stringify(final_details);
 //console.log(final_details_json);
-response.send(final_details_json);
+response.send(final_details_json);*/
