@@ -1,5 +1,5 @@
 const response = new XMLHttpRequest();
-const url = 'http://15.237.34.51:8000/api/v1/';
+const url = 'http://15.237.34.51:8000/api/v1/auth/login';
 
 function select(el) {
     return document.querySelector(el);
@@ -32,7 +32,9 @@ function collect_credential() {
         }; 
         const json = JSON.stringify(login_json);
         response.send(json);//hello  mr.server 😒
-        console.log("loginsent");
+        console.log(json);
     }
 }
+
+
 /**End login handling */

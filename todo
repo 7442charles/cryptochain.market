@@ -1,1 +1,95 @@
 email validation regrex
+
+api url
+http://15.237.34.51:8000/api/v1/
+
+register user url {{url}}/api/v1/auth/register
+sucess response 
+{
+    "data": {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6IkFobWVkIFNob2tyeSIsImV4cCI6MTY1NzA1NDUwN30.2W8CzYVAVaKEV-EcWnO7DNxyB3EuS1nLvCpe1EpxQEE"
+    },
+    "message": "Created successfully",
+    "status": "success"
+}
+success code 201
+body 
+{
+    "name" : "Ahmed Shokry",
+    "phone" : "+201090315851",
+    "email" : "ahmad.shokry.eg@gmail.com",
+    "password" : "xcryptox"
+}
+
+
+{{url}}/api/v1/auth/register
+on error
+{
+    " data": null,
+    "message": "user exists, log in instead",
+    "status": "error"
+}
+error code
+400 bad request
+
+
+
+login method post 
+url {{url}}/api/v1/auth/login
+
+on success
+{
+    "data": {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6IkFobWVkIFNob2tyeSIsImV4cCI6MTY1NzA1NDQ3MH0.JNKLJ3kAs74k0LlP-22V6LFUPCupthrAzPGja40OQOo"
+    },
+    "message": "Logged in successfully",
+    "status": "success"
+}
+
+success code 200
+
+
+on error
+{
+    " data": null,
+    "message": "user not found, register instead",
+    "status": "error"
+}
+error code 400
+
+forgot password method post
+url {{url}}/api/v1/auth/forget
+{
+    "message": "new password sent to admin@inzox.com successfully",
+    "status": "success"
+}
+success code 200 ok
+
+on error
+{
+    "data": null,
+    "message": "record not found",
+    "status": "error"
+}
+code 400 bad request
+
+user update
+url {{url}}/api/v1/users
+on sucess
+{
+    "message": "user updated successfully",
+    "status": "success"
+}
+code 200 ok
+
+on error
+{
+    "data": null,
+    "message": "please insert new values",
+    "status": "error"
+}
+status code 400 bad request
+
+
+
+
