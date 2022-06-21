@@ -13,12 +13,11 @@ function select(el) {
     return document.querySelector(el);
 }
 
-let full_name = select('.signup_details_fullname').value;
-let phone_number = select('.signup_details_phone_number').value;
+
 let password = select('#password');
 let conf_password = select('#conf_password')
 let singup_btn = select('.btn_signup');
-let final_details =  {finalFull_name:'full_name',phone_number:'phone_number', email:'',password:''};
+
 
 singup_btn.addEventListener('click', checkPassword);
 
@@ -47,7 +46,9 @@ function emailcheck() {
 }
 //var data = "{\n    \"name\" : \"Ahmed Shokry\",\n    \"phone\" : \"+201090315851\",\n    \"email\" : \"ahmad.shokry.eg@gmail.com\",\n    \"password\" : \"xcryptox\"\n}";
 
-
+let full_name = select('.signup_details_fullname').value;
+let phone_number = select('.signup_details_phone_number').value;
+let final_details =  {finalFull_name:'full_name',phone_number:'phone_number', email:'',password:''};
 
 xhr.open("POST", url);
 
