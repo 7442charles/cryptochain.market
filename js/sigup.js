@@ -1,12 +1,19 @@
 const response = new XMLHttpRequest();
-const url = 'http://15.237.34.51:8000/api/v1/auth/register';
+const url = '15.237.34.51:8000/api/v1/auth/register';
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function() {
+  if(this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
 
 function select(el) {
     return document.querySelector(el);
 }
 
-let full_name = select('.signup_details_fullname').value;
-let phone_number = select('.signup_details_phone_number').value;
+
 let password = select('#password');
 let conf_password = select('#conf_password')
 let singup_btn = select('.btn_signup');
@@ -39,16 +46,10 @@ function emailcheck() {
 }
 //var data = "{\n    \"name\" : \"Ahmed Shokry\",\n    \"phone\" : \"+201090315851\",\n    \"email\" : \"ahmad.shokry.eg@gmail.com\",\n    \"password\" : \"xcryptox\"\n}";
 
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
 
-xhr.addEventListener("readystatechange", function() {
-  if(this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-
-xhr.open("POST", "%7B%7Burl%7D%7D/api/v1/auth/register");
+let full_name = select('.signup_details_fullname').value;
+let phone_number = select('.signup_details_phone_number').value;
+xhr.open("POST", url);
 
 xhr.send(final_details);
 
