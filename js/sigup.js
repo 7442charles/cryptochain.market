@@ -44,7 +44,6 @@ function emailcheck() {
     console.log('phone_number', phone_number, 'full name0', full_name);
     //console.log('json stringified',JSON.stringify(final_details));
 }
-//var data = "{\n    \"name\" : \"Ahmed Shokry\",\n    \"phone\" : \"+201090315851\",\n    \"email\" : \"ahmad.shokry.eg@gmail.com\",\n    \"password\" : \"xcryptox\"\n}";
 
 let full_name = select('.signup_details_fullname').value;
 let phone_number = select('.signup_details_phone_number').value;
