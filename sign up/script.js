@@ -15,6 +15,7 @@ form.onsubmit = (e)=>{
   //if email and password is blank then add shake class in it else call specified function
   (eInput.value == "") ? eField.classList.add("shake", "error") : checkEmail();
   (pInput.value == "") ? pField.classList.add("shake", "error") : checkPass();
+  (confPassInput.value == "") ? confPassField.add("shake", "error") : passMatch();
 
   setTimeout(()=>{ //remove shake class after 500ms
     eField.classList.remove("shake");
@@ -47,17 +48,18 @@ form.onsubmit = (e)=>{
     }else{ //if pass is empty then remove error and add valid class
       pField.classList.remove("error");
       pField.classList.add("valid");
-      passMatch();
+      console.log(pInput.value);
+      //passMatch();
     }
   }
 
   function passMatch() {
-    if (pInput.value === confPassInput) {
+    if (confPassInput.value === pInput.value) {
       confPassField.classList.add("valid");
       confPassField.classList.remove("error");
     } else {
-      confPassField.classList.remove("valid");
       confPassField.classList.add("error");
+      confPassField.classList.remove("valid");
     }
   }
 
