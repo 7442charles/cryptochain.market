@@ -45,7 +45,7 @@ form.onsubmit = (e)=>{
   //if eField and pField doesn't contains error class that mean user filled details properly
   if(!eField.classList.contains("error") && !pField.classList.contains("error")){
     console.log('email=', eInput.value, 'pass =', pInput.value );
-    fetch("https://bit.ly/cryptochainapi", {
+    fetch("http://api.cryptochainmarket.tk:8000/api/v1/auth/login", {
       method: "POST",
       body:JSON.stringify({
         email:eInput.value,
