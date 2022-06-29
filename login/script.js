@@ -2,7 +2,9 @@ const form = document.querySelector("form");
 eField = form.querySelector(".email"),
 eInput = eField.querySelector("input"),
 pField = form.querySelector(".password"),
-pInput = pField.querySelector("input");
+pInput = pField.querySelector("input"),
+phoneField = form.querySelector(".phone-no"),
+phoneInput = phoneField.querySelector("input");
 
 form.onsubmit = (e)=>{
   e.preventDefault(); //preventing from form submitting
@@ -44,20 +46,50 @@ form.onsubmit = (e)=>{
 
   //if eField and pField doesn't contains error class that mean user filled details properly
   if(!eField.classList.contains("error") && !pField.classList.contains("error")){
-    console.log('email=', eInput.value, 'pass =', pInput.value );
-    fetch("http://api.cryptochainmarket.tk:8000/api/v1/auth/login", {
+    //console.log(/*'email=', eInput.value,*/ 'pass =', pInput.value, "phoneNumber =", phoneInput.value);
+    fetch("http://api.cryptochainmarket.tk:8000/api/v1/auth/login", { //the login api url
       method: "POST",
       body:JSON.stringify({
         email:eInput.value,
+        phone:phoneInput.value,
         password:pInput.value
       }),
     })
     .then((response) => response.json())
     .then((result) => {
-      if (result.message === "SUCCESS") {
-        alert("logged in successfully");
-      } else {
-        alert("")
+      if (result.status == "success") {//to display the toast of login success
+        Toastify({
+          text: "logged in successfully",
+          duration: 10000,
+          destination: "/index.html",
+          avatar: "../imgs/IMG-20220520-WA0007-removebg-preview.png",
+          newWindow: false,
+          close: true,
+          gravity: "bottom", // `top` or `bottom`
+          position: "center", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #4C4F50, #B0B0BO)",
+          },
+          onClick: function(){} // Callback after click
+        }).showToast();
+      } else {//display toast if login wasn't succefull
+        Toastify({
+          text: "Error occured! \n Check your login details \n",
+          duration: 8000,
+          avatar: "../imgs/IMG-20220520-WA0007-removebg-preview.png",
+          destination: "#",
+          newWindow: false,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #4C4F50, #B0B0BO)",
+          },
+          onClick: function(){} // Callback after click
+        }).showToast();
+        alert("fucked up")
       }
     });
     //window.location.href = form.getAttribute("action"); //redirecting user to the specified url which is inside action attribute of form tag

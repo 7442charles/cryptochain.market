@@ -48,7 +48,7 @@ form.onsubmit = (e)=>{
     }else{ //if pass is empty then remove error and add valid class
       pField.classList.remove("error");
       pField.classList.add("valid");
-      console.log(pInput.value);
+      //console.log(pInput.value);
       //passMatch();
     }
   }
@@ -65,7 +65,58 @@ form.onsubmit = (e)=>{
 
   //if eField and pField doesn't contains error class that mean user filled details properly
   if(!eField.classList.contains("error") && !pField.classList.contains("error")){
-    console.log('email=', eInput.value, 'pass =', pInput.value, 'confirmed Password=', confPassInput.value );
-    window.location.href = form.getAttribute("action"); //redirecting user to the specified url which is inside action attribute of form tag
+    //console.log('email=', eInput.value, 'pass =', pInput.value, 'confirmed Password=', confPassInput.value );
+    fetch("http://api.cryptochainmarket.tk:8000/api/v1/auth/register", { //the login api url
+      method: "POST",
+      body:JSON.stringify({
+        phone:phoneInput.value,
+        email:eInput.value,
+        name:nInput.value,
+        password:confPassInput.value
+      }),
+    })
+    .then((response) => response.json())
+    .then((result) => {
+      //console.log("result status", result.status);
+      if (result.status == "success") {
+        Toastify({
+          text: "Signed Up successfully, proceed to Login",
+          duration: 5000,
+          destination: "../login/loginmain.html",
+          avatar: "../imgs/IMG-20220520-WA0007-removebg-preview.png",
+          newWindow: false,
+          close: true,
+          gravity: "bottom", // `top` or `bottom`
+          position: "center", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #4C4F50, #B0B0BO)",
+          },
+          onClick: function(){} // Callback after click
+        }).showToast();
+        //console.log("registerd in successfully");
+      } else { 
+        Toastify({
+          text: "Error occured! \n Make sure passowrd has 8+ chars \n Add country code to Phone number \n",
+          duration: 8000,
+          avatar: "../imgs/IMG-20220520-WA0007-removebg-preview.png",
+          destination: "#",
+          newWindow: false,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+          },
+          onClick: function(){} // Callback after click
+        }).showToast();
+      
+        //console.log("fucked up")
+      }
+    });
+    //window.location.href = form.getAttribute("action"); //redirecting user to the specified url which is inside action attribute of form tag
   }
 }
+
+
