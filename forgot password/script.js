@@ -103,5 +103,3 @@ let reset_pass_div =
     <div class="error error-txt">Password can't be blank</div>
   </div>`;
 
-/*codeDiv.innerHTML = reset_code_div;
-resetPass.innerHTML = reset_pass_div;*/
