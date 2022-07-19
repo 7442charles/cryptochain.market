@@ -59,8 +59,9 @@ form.onsubmit = (e)=>{
           },
           onClick: function(){} // Callback after click
         }).showToast();
-        codeDiv.innerHTML = reset_code_div;
-        actionBtn.value = "Verify Code";
+        codeDiv.innerHTML = reset_code_div,
+        resetPass.innerHTML = reset_pass_div;
+        actionBtn.value = "reset Password";
         document.querySelector(".code-class").focus();
       } else {//display toast if login wasn't succefull
         Toastify({
