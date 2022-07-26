@@ -36,7 +36,7 @@ form.onsubmit = (e)=>{
   if(!eField.classList.contains("error")){
     //console.log(/*'email=', eInput.value,*/ 'pass =', pInput.value, "phoneNumber =", phoneInput.value);
     fetch("http://api.cryptochainmarket.tk:8000/api/v1/auth/forget", { //the login api url
-      method: "POST",
+      method: "GET",
       body:JSON.stringify({
         email:eInput.value,
       }),
