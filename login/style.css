@@ -91,6 +91,11 @@ form .field.error input{
   color: #bfbfbf;
   transition: color 0.2s ease;
 }
+.input-area .icons{
+  right:15px;
+  color:#bfbfbf;
+  transition: color 0.2s ease;
+}
 .input-area .error-icon{
   right: 15px;
   color: #dc3545;
