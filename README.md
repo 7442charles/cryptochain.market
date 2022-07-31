@@ -23,7 +23,12 @@ This project is used by the following companies:
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://raw.githubusercontent.com/7442charles/cryptochain.market/main/imgs/screenshots/sign%20in%20scr%20desktop.JPG)
+
+
+## Screenshots
+
+![App Screenshot](https://raw.githubusercontent.com/7442charles/cryptochain.market/main/imgs/screenshots/signup%20desktop.JPG)
 
 
 ## Contributing
