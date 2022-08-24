@@ -48,7 +48,7 @@ Its been a long journery creating this platform considering the many challenges 
 - [@Ahmed](https://www.github.com/ahmad-shokry-eg)
 - [@Edwin](https://www.github.com/#)
 - [@Esraa](https://www.github.com/esraa00)
-- [@Charles](https://www.github.com/7442charles)
+- [@Michael](https://www.github.com/7442charles)
 
 
 
