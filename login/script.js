@@ -74,6 +74,7 @@ form.onsubmit = (e)=>{
           },
           onClick: function(){} // Callback after click
         }).showToast();
+        window.location.href = "/user profile/index.html"
       } else {//display toast if login wasn't succefull
         Toastify({
           text: "Error occured! \n Check your login details \n",
@@ -93,7 +94,7 @@ form.onsubmit = (e)=>{
         alert("fucked up")
       }
     });
-    window.location.href = form.getAttribute("action"); //redirecting user to the specified url which is inside action attribute of form tag
+    //window.location.href = form.getAttribute("action"); //redirecting user to the specified url which is inside action attribute of form tag
   }
 }
 
