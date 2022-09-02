@@ -93,7 +93,7 @@ form.onsubmit = (e)=>{
         alert("fucked up")
       }
     });
-    //window.location.href = form.getAttribute("action"); //redirecting user to the specified url which is inside action attribute of form tag
+    window.location.href = form.getAttribute("action"); //redirecting user to the specified url which is inside action attribute of form tag
   }
 }
 
